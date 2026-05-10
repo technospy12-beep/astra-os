@@ -38,12 +38,10 @@ export default function LeftPanel() {
 
   return (
     <div className="w-64 glass-panel border-r border-astra-blue/20 overflow-y-auto p-4 space-y-4">
-      {/* Title */}
       <div className="text-xs font-mono font-bold text-astra-cyan uppercase tracking-widest">
         ▓ System Diagnostics
       </div>
 
-      {/* CPU */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs font-mono">
           <span className="text-astra-blue">CPU Usage</span>
@@ -57,7 +55,6 @@ export default function LeftPanel() {
         </div>
       </div>
 
-      {/* Memory */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs font-mono">
           <span className="text-astra-purple">Memory</span>
@@ -71,7 +68,6 @@ export default function LeftPanel() {
         </div>
       </div>
 
-      {/* Disk */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs font-mono">
           <span className="text-astra-green">Storage</span>
@@ -87,7 +83,6 @@ export default function LeftPanel() {
 
       <div className="border-t border-astra-blue/10 pt-4 my-4"></div>
 
-      {/* Network Status */}
       <div className="glass-sm p-3 space-y-2">
         <div className="flex items-center gap-2 text-xs font-mono text-astra-cyan">
           <Network className="w-3 h-3" />
@@ -96,38 +91,35 @@ export default function LeftPanel() {
         <div className="text-xs text-astra-blue">{diagnostics.network}</div>
       </div>
 
-      {/* Threats */}
       <div className="glass-sm p-3 space-y-2">
         <div className="flex items-center gap-2 text-xs font-mono">
           <AlertTriangle className="w-3 h-3" />
           <span className={diagnostics.threats > 0 ? 'text-red-400' : 'text-astra-green'}>
-            Threats Detected
+            Threats
           </span>
         </div>
         <div className="text-xs text-astra-cyan">{diagnostics.threats}</div>
       </div>
 
-      {/* Processes */}
       <div className="glass-sm p-3 space-y-2">
         <div className="flex items-center gap-2 text-xs font-mono text-astra-cyan">
           <Zap className="w-3 h-3" />
-          <span>Active Processes</span>
+          <span>Processes</span>
         </div>
         <div className="text-xs text-astra-blue">{diagnostics.processes}</div>
       </div>
 
       <div className="border-t border-astra-blue/10 pt-4 my-4"></div>
 
-      {/* Recent Activity */}
       <div className="text-xs font-mono font-bold text-astra-cyan uppercase tracking-widest">
         ▓ Activity Log
       </div>
-      <div className="space-y-2 text-xs font-mono text-astra-blue/70 text-left">
+      <div className="space-y-2 text-xs font-mono text-astra-blue/70">
         <div>[16:45:23] System boot completed</div>
-        <div>[16:45:45] Network interface online</div>
-        <div>[16:46:12] AI modules initialized</div>
-        <div>[16:47:34] Voice assistant ready</div>
-        <div>[16:48:01] Weather sync complete</div>
+        <div>[16:45:45] Network online</div>
+        <div>[16:46:12] AI initialized</div>
+        <div>[16:47:34] Assistant ready</div>
+        <div>[16:48:01] Sync complete</div>
       </div>
     </div>
   )

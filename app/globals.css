@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+  font-family: 'Courier New', monospace;
+  color: #00f0ff;
+  overflow: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 244, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00d4ff;
+  border-radius: 4px;
+}
+
+/* Glass Panel */
+.glass-panel {
+  background: rgba(10, 14, 39, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 244, 255, 0.2);
+  border-radius: 8px;
+}
+
+.glass-sm {
+  background: rgba(10, 14, 39, 0.5);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 244, 255, 0.15);
+  border-radius: 6px;
+}
+
+/* Neon Glow */
+.neon-glow {
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00d4ff;
+}
+
+.neon-border {
+  border-color: #00f0ff;
+  box-shadow: 0 0 10px rgba(0, 244, 255, 0.3), inset 0 0 10px rgba(0, 244, 255, 0.1);
+}
+
+/* Holographic Effects */
+.hologram {
+  animation: hologram-flicker 0.15s infinite;
+}
+
+.hologram-pulse {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Scan Line */
+.scan-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f0ff, transparent);
+  animation: scan-line 3s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Data Stream */
+.data-stream {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-stream::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #00d4ff;
+  opacity: 0.3;
+  animation: data-stream 2s linear infinite;
+  white-space: nowrap;
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #00d4ff, #00f0ff, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Rotating Animation */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-animation {
+  animation: rotate 20s linear infinite;
+}
+
+/* Radar Sweep */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radar-sweep 4s linear infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse-animation {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.pulse-animation {
+  animation: pulse-animation 2s ease-in-out infinite;
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow: 0 0 10px rgba(0, 244, 255, 0.5), 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.glow-intense {
+  box-shadow: 0 0 20px rgba(0, 244, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.5), inset 0 0 20px rgba(0, 244, 255, 0.1);
+}
+
+/* Focus Styles */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 20px rgba(0, 244, 255, 0.5);
+}
+
+/* Typography */
+.font-mono {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .glass-panel {
+    font-size: 0.875rem;
+  }
+}
